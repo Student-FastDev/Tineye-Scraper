@@ -1,3 +1,4 @@
+# Import necessary libraries
 from seleniumwire import webdriver
 from selenium.webdriver.chrome.options import Options
 from selenium.webdriver.support.ui import WebDriverWait
@@ -28,15 +29,19 @@ def load_settings():
 
 # Function to load proxies from a file
 def load_proxies(file_path):
+    # Open the file and read the proxies
     with open(file_path, 'r') as proxy_file:
         proxies = proxy_file.readlines()
+    # Return the list of proxies
     return proxies
 
 def initialize_driver(proxy):
+    # Install the Chrome driver
     chromedriver_autoinstaller.install()
 
     # Setup ChromeOptions
     options = webdriver.ChromeOptions()
+    # Set various options for the Chrome driver
     options.add_argument('--window-size=1920,1080')
     options.add_argument('--headless')
     options.add_argument('--no-sandbox')
@@ -74,21 +79,27 @@ def initialize_driver(proxy):
     return driver
 
 def remove_proxy(file_path, proxy):
+    # Open the file and read the proxies
     with open(file_path, 'r') as f:
         proxies = f.readlines()
+    # Open the file to write the proxies
     with open(file_path, 'w') as f:
         for p in proxies:
+            # Write all proxies except the one to be removed
             if p.strip() != proxy:
                 f.write(p)
 
 # Initialize driver to None before the try block
 driver = None
 
+# This script is intended to be run as a standalone script
 if __name__ == "__main__":
     try:
+        # Check if a filename was passed as an argument
         if len(sys.argv) > 1:
             path = sys.argv[1]
         else:
+            # If not, ask the user for a filename
             path = str(input("Please enter a filename: "))
 
         # Check if the file exists in the same directory
@@ -99,10 +110,11 @@ if __name__ == "__main__":
         # Load settings
         settings = load_settings()
 
-       # Load proxies if use_proxy is True
+       # Load proxies
         proxies = load_proxies("proxy.txt")
         proxy = random.choice(proxies).strip()
 
+        # Check if there are any proxies in the file
         if(proxy == "DEFAULT_PROXY"):
             print("No proxy found in proxy.txt! Please add a proxy.")
             os._exit(1)
@@ -110,11 +122,12 @@ if __name__ == "__main__":
         # Initialize driver
         driver = initialize_driver(proxy)
         wait = WebDriverWait(driver, 60)
-        wait_Error = WebDriverWait(driver, 1)
 
+        # Navigate to the website
         driver.get("https://tineye.com")
 
         try:
+            # Wait for the upload button to be present and upload the file
             upload = wait.until(EC.presence_of_element_located((By.XPATH, '//*[@id="upload_box"]')))
             upload.send_keys(os.path.join(os.path.dirname(__file__), path))
         except TimeoutException:
@@ -123,6 +136,7 @@ if __name__ == "__main__":
             os._exit(1)
 
         try:
+            # Wait for the results to be present and print them
             results = wait.until(EC.presence_of_element_located((By.XPATH, '//*[@id="result_count"]')))
             results_text = results.text.replace(',', '')  # Remove commas
             num_results = re.search(r'\d+', results_text).group()
@@ -134,6 +148,7 @@ if __name__ == "__main__":
             driver.quit()
 
         try:
+            # Remove the file
             os.remove(os.path.join(os.path.dirname(__file__), path))
         except:
             print("Error deleting file!")
@@ -141,6 +156,7 @@ if __name__ == "__main__":
             os._exit(1)
             
     except Exception as e:
+        # Print any other exceptions that were not caught
         print(f"An error occurred: {e}!")
     finally:
         # Check if driver is not None before calling quit
