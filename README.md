@@ -20,23 +20,23 @@ This Python script, utilizing Selenium, automates image searching on TinEye. It 
 The TinEye Image Search Bot automates the process of searching for images on TinEye. It's particularly useful for reverse image searches in bulk or automated scenarios.
 
 ### Safety and Privacy
-The script offers an option to use proxies, enhancing privacy. Users should adhere to the terms of service of the websites they access.
+The script uses proxies, enhancing privacy. Users should adhere to the terms of service of the websites they access.
 
 ## Prerequisites
 Before installation, ensure you have the following:
-- Python installed on your system.
-- Google Chrome browser.
-- Basic understanding of Python and command-line operations.
+- Python
+- Google Chrome
+- Git
 
 ## Installation
 
 1. Clone the repository:
    ```
-   git clone https://github.com/YourUsername/TinEye-Image-Search-Bot
+   git clone https://github.com/Student-FastDev/Pimeyes-Scraper
    ```
 2. Navigate to the script directory:
    ```
-   cd TinEye-Image-Search-Bot
+   cd Pimeyes-Scraper
    ```
 3. Install required dependencies:
    ```
