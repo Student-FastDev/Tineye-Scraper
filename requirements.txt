@@ -1,0 +1,5 @@
+chromedriver_autoinstaller==0.6.3
+clear_screen==0.1.14
+selenium==4.16.0
+webdriver_manager==4.0.1
+selenium_wire==5.1.0
