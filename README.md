@@ -1,6 +1,6 @@
 # TinEye Image Search Bot
 
-This Python script, utilizing Selenium, automates image searching on TinEye. It is designed to upload an image and scrape search results while optionally using proxies for anonymity.
+This Python script, utilizing Selenium, automates image searching on TinEye. It is designed to upload an image and scrape search results while using proxies for anonymity.
 
 ## Table of Contents
 - [Introduction](#introduction)
