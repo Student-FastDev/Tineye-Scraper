@@ -9,9 +9,8 @@ This Python script, utilizing Selenium, automates image searching on TinEye. It 
 - [Prerequisites](#prerequisites)
 - [Installation](#installation)
 - [Usage](#usage)
-  - [Initial Setup](#initial-setup)
   - [Running the Script](#running-the-script)
-- [Proxy Management](#proxy-management)
+  - [Configuration](#configuration)
 - [Troubleshooting](#troubleshooting)
 
 ## Introduction
@@ -32,11 +31,11 @@ Before installation, ensure you have the following:
 
 1. Clone the repository:
    ```
-   git clone https://github.com/Student-FastDev/Pimeyes-Scraper
+   git clone https://github.com/Student-FastDev/Tineye-Scraper
    ```
 2. Navigate to the script directory:
    ```
-   cd Pimeyes-Scraper
+   cd Tineye-Scraper
    ```
 3. Install required dependencies:
    ```
@@ -45,19 +44,24 @@ Before installation, ensure you have the following:
 
 ## Usage
 
-### Initial Setup
-1. Prepare a list of proxies in `proxy.txt`, if using the proxy feature. Format each proxy as `ip:port:username:password`.
-
 ### Running the Script
-1. Run the script via command line:
-   ```bash
-   python main.py
-   ```
-2. Enter the filename of the image you want to search when prompted.
-3. The script will navigate to TinEye, upload the image, and display the search results.
 
-## Proxy Management
-If using proxies, the script will select one at random from `proxy.txt`. Make sure the proxies are valid and in the correct format.
+Execute the script from the command line:
+
+   ```
+   python tineyes.py [name of the image file in the same directory]
+   ```
+
+### Configuration
+
+After the first run, edit `proxy.txt`:
+
+   ```
+   IP:PORT:USER:PASS
+   ```
+
+The script randomly selects a proxy from this file for each session, ensuring varied IP addresses for different scraping tasks.
+After the finish of the program, the image file is deleted.
 
 ## Troubleshooting
 - Ensure all dependencies are installed.
