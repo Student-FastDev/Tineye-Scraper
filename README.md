@@ -83,32 +83,6 @@ python tineyes.py sample_image.jpg
 
     After processing, the script automatically deletes the image file to maintain a clean directory. Ensure that the image file you want to search is located in the same directory as the script or provide the correct path.
 
-## Troubleshooting
-
-- **Dependencies Issues:**
-  
-  - Ensure all dependencies are correctly installed by running `pip install -r requirements.txt`.
-  
-- **Google Chrome Installation:**
-  
-  - Verify that Google Chrome is installed and updated to the latest version.
-  
-- **WebDriver Compatibility:**
-  
-  - Ensure that the Chrome WebDriver version matches your installed Google Chrome version.
-  
-- **Proxy Format:**
-  
-  - Double-check the formatting in `proxy.txt` to ensure they adhere to the required `IP:PORT:USER:PASS` format.
-
-- **Captcha Challenges:**
-  
-  - If captcha handling fails, consider using more reliable proxies or manually solving captchas as needed.
-
-- **Error Messages:**
-  
-  - Refer to the error messages outputted by the script for specific guidance on resolving issues.
-
 ## Notes
 
 - **Asynchronous Efficiency:** While the current version uses Selenium for automation, future updates may incorporate asynchronous programming to handle multiple searches concurrently, further enhancing efficiency.
