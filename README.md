@@ -93,36 +93,6 @@ python tineyes.py sample_image.jpg
 
 - **Compliance:** Ensure that your usage of the bot complies with TinEye's [Terms of Service](https://tineye.com/legal) to avoid potential legal issues.
 
-## Contributing
-
-Contributions are welcome! Whether it's reporting bugs, suggesting features, or submitting pull requests, your input helps improve the **TinEye Image Search Bot**. Please follow these steps for contributing:
-
-1. **Fork the Repository:**
-
-    Click the "Fork" button at the top of the repository page to create your own copy.
-
-2. **Create a New Branch:**
-
-    ```sh
-    git checkout -b feature/YourFeatureName
-    ```
-
-3. **Commit Your Changes:**
-
-    ```sh
-    git commit -m "Add your detailed description here"
-    ```
-
-4. **Push to Your Fork:**
-
-    ```sh
-    git push origin feature/YourFeatureName
-    ```
-
-5. **Open a Pull Request:**
-
-    Navigate to the original repository and click "Compare & pull request" to submit your changes for review.
-
 ---
 
 <div align="center">  
